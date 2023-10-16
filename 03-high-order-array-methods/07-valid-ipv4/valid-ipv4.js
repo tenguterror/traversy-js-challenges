@@ -1,7 +1,14 @@
 const isValidIPv4 = (str) => {
-  if (str.split('.').length < 3 || str.split('.').length > 4) {
+  const strArr = str.split('.');
+
+  if (strArr.length !== 4) {
     return false;
   }
+
+  return strArr.every((x) => {
+    const num = parseInt(x);
+    return num >= 0 && num <= 255 && x === num.toString();
+  });
 };
 
 module.exports = isValidIPv4;
