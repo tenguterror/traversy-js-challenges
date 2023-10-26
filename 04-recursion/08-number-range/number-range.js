@@ -3,7 +3,7 @@ function numberRange(startNum, endNum) {
     return [startNum];
   }
 
-  let result = numberRange(startNum, endNum - 1);
+  const result = numberRange(startNum, endNum - 1);
   result.push(endNum);
   return result;
 }
